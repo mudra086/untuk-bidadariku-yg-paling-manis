@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nayla 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink: #ff8fbd;
+  --soft: #ffd7e8;
+  --purple: #bca3ff;
+  --bg: #130e27;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: var(--bg);
+  color: #fff0f8;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 7%;
+  background: #130e27eF;
+  border-bottom: 1px solid #ffffff15;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  color: var(--pink);
+  font-weight: 700;
+  font-size: 19px;
+}
+
+nav a {
+  color: #f7d9eb;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+}
+
+section {
+  padding: 75px 7%;
+  position: relative;
+}
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background:
+    radial-gradient(ellipse at 85% 50%, #78416b50, transparent 45%),
+    radial-gradient(ellipse at 5% 90%, #5845a040, transparent 45%);
+}
+
+h1 {
+  font-size: clamp(38px, 8vw, 65px);
+  line-height: 1.15;
+  margin: 18px 0;
+}
+
+h1 span, .pink { color: var(--pink); }
+
+.tag {
+  display: inline-block;
+  color: var(--pink);
+  background: #ff8fbd17;
+  border: 1px solid #ff8fbd55;
+  padding: 9px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+}
+
+.desc {
+  color: #d3c4e6;
+  line-height: 1.9;
+  max-width: 440px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  background: var(--pink);
+  color: #32142a;
+  border: 0;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 30px #ff8fbd50;
+}
+
+.bear {
+  font-size: clamp(100px, 23vw, 190px);
+  text-align: center;
+  filter: drop-shadow(0 10px 35px #ff8fbd35);
+  animation: bounce 2.5s ease-in-out infinite;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bear small {
+  display: block;
+  font-size: 13px;
+  color: var(--pink);
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(25px, 5vw, 36px);
+  margin-bottom: 14px;
+}
+
+.sub {
+  text-align: center;
+  color: #c8b6de;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.paper {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  background: #ffe8f1;
+  color: #63354f;
+  border-radius: 22px;
+  transform: rotate(-1deg);
+  box-shadow: 0 15px 50px #0003;
+}
+
+.paper h3 {
+  color: #d94d8a;
+  margin-bottom: 17px;
+  font-size: 23px;
+}
+
+.paper p {
+  line-height: 2;
+  margin-bottom: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #ffffff09;
+  border: 1px solid #ffffff15;
+  padding: 24px;
+  border-radius: 22px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #ff8fbd88;
+  background: #ff8fbd0d;
+}
+
+.card .emoji { font-size: 32px; }
+
+.card h3 {
+  color: var(--pink);
+  margin: 12px 0;
+}
+
+.card p {
+  color: #d3c4e6;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.promise {
+  text-align: center;
+  background: linear-gradient(180deg, transparent, #8c477e20, transparent);
+}
+
+.promise .bear { font-size: 100px; }
+
+#secret {
+  display: none;
+  margin: 24px auto 0;
+  max-width: 500px;
+  line-height: 1.9;
+  padding: 22px;
+  border-radius: 20px;
+  background: #ff8fbd14;
+  border: 1px solid #ff8fbd44;
+  animation: fade .5s;
+}
+
+footer {
+  padding: 30px 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #bba9d1;
+  border-top: 1px solid #ffffff12;
+}
+
+.floating {
+  position: fixed;
+  bottom: -40px;
+  z-index: 20;
+  pointer-events: none;
+  animation: floatUp 5s linear forwards;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  nav { padding: 15px 5%; }
+  .links { gap: 10px; }
+  nav a { font-size: 10px; }
+  section { padding: 60px 6%; }
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+    min-height: 85vh;
+  }
+  .desc { margin-left: auto; margin-right: auto; }
+  .paper { padding: 23px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">♡ For Nayla</div>
+  <div class="links">
+    <a href="#home">Home</a>
+    <a href="#surat">Pesan</a>
+    <a href="#alasan">Kenapa kamu?</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div>
+    <span class="tag">💌 A LITTLE WEBSITE FOR MY GIRL</span>
+
+    <h1>Hey, <span>Nayla!</span><br>
+    Kamu tuh...</h1>
+
+    <h2 style="text-align:left;color:#ffb3d1">
+      spesial banget ♡
+    </h2>
+
+    <p class="desc">
+      Bukan cuma cantik, tapi juga punya hati
+      yang bikin aku betah. Kamu tuh kayak
+      lagu favorit, diputer berkali-kali pun
+      nggak pernah bosen. 🥹💕
+    </p>
+
+    <a class="btn" href="#surat">Buka pesan aku 💌 ↓</a>
+  </div>
+
+  <div class="bear" onclick="bearTalk()">
+    🧸
+    <small id="bearText">psst... ini buat Nayla ♡</small>
+  </div>
+</section>
+
+<section id="surat">
+  <h2>Surat kecil buat <span class="pink">Nayla ♡</span></h2>
+  <p class="sub">Dari cowok yang kadang ngeselin, tapi sayangnya nggak main-main.</p>
+
+  <div class="paper">
+    <h3>Dear, Nayla 🧸💗</h3>
+
+    <p>
+      Naylaaa, makasih ya udah hadir di hidup aku.
+      Aku nggak tau gimana ceritanya bisa sesayang
+      ini sama kamu, tapi yaa... here we are. 🥹
+    </p>
+
+    <p>
+      Aku tau aku nggak sempurna. Kadang bisa
+      ngeselin, kadang bikin kamu kesel, kadang
+      juga suka random sendiri wkwk.
+      Tapi satu hal yang serius: aku beneran
+      bersyukur punya kamu.
+    </p>
+
+    <p>
+      Aku nggak mau cuma jadi orang yang bilang
+      "I love you" tiap hari. Aku juga mau jadi
+      orang yang bikin kamu ngerasa dicintai,
+      didengerin, dan dihargai.
+    </p>
+
+    <p>
+      Kalau dunia lagi jahat sama kamu, istirahat
+      dulu ya, sayang. Kamu nggak harus selalu
+      kuat setiap saat. Aku pengen kamu tau
+      kalau perasaan kamu itu penting. ♡
+    </p>
+
+    <p>
+      Intinya, jangan bosen-bosen sama aku yaa.
+      Kita bikin banyak cerita bareng, dari yang
+      receh sampai yang bakal kita inget nanti.
+    </p>
+
+    <h3>I love you, Nayla. Always. ❤️</h3>
+    <p style="text-align:right">— cowok kesayangan kamu (amin wkwk)</p>
+  </div>
+</section>
+
+<section id="alasan">
+  <h2>Kenapa gue suka <span class="pink">kamu?</span> 💘</h2>
+  <p class="sub">Spoiler: alasannya nggak cuma satu, sayang.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="emoji">🐻</div>
+      <h3>1. Kamu gemesin</h3>
+      <p>
+        Kadang tingkah kamu tuh random banget,
+        tapi justru itu yang bikin aku senyum
+        sendiri kayak orang aneh wkwk.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">💗</div>
+      <h3>2. Kamu bikin nyaman</h3>
+      <p>
+        Sama kamu, hal sederhana aja bisa
+        terasa spesial. Chat sebentar pun
+        kadang cukup buat bikin mood aku balik.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🌷</div>
+      <h3>3. Kamu itu kamu</h3>
+      <p>
+        Aku nggak butuh kamu jadi orang lain.
+        Jadi diri kamu sendiri aja udah punya
+        tempat spesial di hati aku.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🫶</div>
+      <h3>4. Aku bangga sama kamu</h3>
+      <p>
+        Kamu tetap berharga bahkan saat kamu
+        lagi capek, sedih, atau ngerasa
+        belum cukup baik. Jangan lupa itu ya.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="bear">🐻‍❄️💝</div>
+
+  <h2>One last thing, <span class="pink">Nayla...</span></h2>
+
+  <p class="sub">
+    Aku punya satu pertanyaan penting nih.<br>
+    Jawab jujur yaa, jangan kabur wkwk 😭
+  </p>
+
+  <button class="btn" onclick="showSecret()">
+    Klik kalau sayang aku ♡
+  </button>
+
+  <div id="secret">
+    <h3 style="color:#ff9bc7;margin-bottom:12px">
+      HEHE KETANGKEP! 😭💗
+    </h3>
+
+    <p>
+      Nayla, kamu mau nggak terus jadi bagian
+      dari cerita aku? Kita tumbuh bareng,
+      saling belajar, saling dukung, dan
+      bikin kenangan yang indah?
+    </p>
+
+    <p>
+      Aku nggak bisa janji semuanya bakal
+      selalu gampang, tapi aku pengen kita
+      sama-sama berusaha. Pelan-pelan,
+      tanpa harus jadi sempurna. 🫶
+    </p>
+
+    <h2 style="margin-top:18px">Nayla + Mudra = ♡</h2>
+    <p>My favorite person, today and hopefully for a long time. 💍</p>
+
+    <button class="btn" onclick="hearts()">Kirim 1000 peluk 🧸</button>
+  </div>
+</section>
+
+<footer>
+  Made with ♡, khusus buat Nayla.<br>
+  <span style="color:#ff8fbd">
+    You're my favorite notification. 📱💕
+  </span>
+</footer>
+
+<script>
+function bearTalk() {
+  const text = document.getElementById("bearText");
+
+  text.textContent = "Nayla, kamu lucu banget ih! 💗";
+
+  setTimeout(() => {
+    text.textContent = "psst... ini buat Nayla ♡";
+  }, 2500);
+}
+
+function showSecret() {
+  const secret = document.getElementById("secret");
+
+  secret.style.display = "block";
+  secret.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+  hearts();
+}
+
+function hearts() {
+  const emojis = ["💗", "💖", "💕", "🧸", "💘", "🌷"];
+
+  for (let i = 0; i < 35; i++) {
+    setTimeout(() => {
+      const el = document.createElement("div");
+
+      el.className = "floating";
+      el.textContent = emojis[
+        Math.floor(Math.random() * emojis.length)
+      ];
+
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.fontSize = (18 + Math.random() * 25) + "px";
+      el.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+      document.body.appendChild(el);
+
+      setTimeout(() => el.remove(), 6500);
+    }, i * 80);
+  }
+}
+
+// Hati kecil muncul sesekali
+setInterval(() => {
+  const el = document.createElement("div");
+
+  el.className = "floating";
+  el.textContent = Math.random() > 0.5 ? "♡" : "✨";
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.color = "#ff9bc7";
+  el.style.animationDuration = "7s";
+
+  document.body.appendChild(el);
+
+  setTimeout(() => el.remove(), 7000);
+}, 1200);
+</script>
+
+</body>
+</html>
